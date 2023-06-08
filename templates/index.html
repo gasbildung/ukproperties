@@ -1,0 +1,19 @@
+<html class="text-center bg-slate-900">
+<script src="https://cdn.tailwindcss.com"></script>
+<div>
+<form method="POST">
+    </br></br>
+    <h1 class="text-8xl text-cyan-300">UK PostCode Price Data</h1>
+    </br></br>
+    <h2 class="text-5xl text-cyan-100">Enter postcode to get property insights:</h2>
+    </br></br>
+    <input name="text" class="shadow-xl text-3xl text-black">
+    <input type="submit" value=" Search " class="shadow-xl text-3xl text-cyan-100 bg-indigo-500">
+</form>
+<table class="mx-auto table-auto w-4/5 px-100 border-collapse border border-slate-500 border-separate">
+    </br></br>
+    <thead class="text-3xl bg-indigo-500"><td>Average Price</td><td>Highest Price</td><td>Highest Sold Prop</td><td>Lowest Price</td><td>Lowest Sold Prop</td><td>Total Properties sold</td></thead>
+    <tbody class="text-xl bg-indigo-500"><td>£{{data.average_price}}</td><td>£{{data.maximum_price}}</td><td>{{data.maximum_price_property}}</td><td>£{{data.minimum_price}}</td><td>{{data.minimum_price_property}}</td><td>{{data.num_sold}}</td></tbody>
+</table>
+</html>
+</div>
