@@ -10,10 +10,28 @@
     <input name="text" class="shadow-xl text-3xl text-black">
     <input type="submit" value=" Search " class="shadow-xl text-3xl text-cyan-100 bg-indigo-500">
 </form>
-<table class="mx-auto table-auto w-4/5 px-100 border-collapse border border-slate-500 border-separate">
-    </br></br>
-    <thead class="text-3xl bg-indigo-500"><td>Average Price</td><td>Highest Price</td><td>Highest Sold Prop</td><td>Lowest Price</td><td>Lowest Sold Prop</td><td>Total Properties sold</td></thead>
-    <tbody class="text-xl bg-indigo-500"><td>£{{data.average_price}}</td><td>£{{data.maximum_price}}</td><td>{{data.maximum_price_property}}</td><td>£{{data.minimum_price}}</td><td>{{data.minimum_price_property}}</td><td>{{data.num_sold}}</td></tbody>
-</table>
+<table class="mx-auto w-4/5 border-collapse border border-slate-500 border-separate bg-blue-500 bg-opacity-20 backdrop-filter backdrop-blur-lg">
+    <thead class="bg-slate-700 bg-opacity-30 backdrop-filter backdrop-blur-lg text-white text-3xl text-cyan-100">
+      <tr>
+        <th class="px-6 py-4">Average Price</th>
+        <th class="px-6 py-4">Highest Price</th>
+        <th class="px-6 py-4">Highest Sold Prop</th>
+        <th class="px-6 py-4">Lowest Price</th>
+        <th class="px-6 py-4">Lowest Sold Prop</th>
+        <th class="px-6 py-4">Total Properties Sold</th>
+      </tr>
+    </thead>
+    <tbody class="bg-slate-500 bg-opacity-20 backdrop-filter backdrop-blur-lg text-2xl text-cyan-100">
+      <tr>
+        <td class="px-6 py-4">£{{ data.average_price | comma }}</td>
+        <td class="px-6 py-4">£{{ data.maximum_price | comma }}</td>
+        <td class="px-6 py-4">{{ data.maximum_price_property }}</td>
+        <td class="px-6 py-4">£{{ data.minimum_price | comma }}</td>
+        <td class="px-6 py-4">{{ data.minimum_price_property }}</td>
+        <td class="px-6 py-4">{{ data.num_sold | comma }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
 </html>
 </div>
