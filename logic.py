@@ -4,8 +4,12 @@ def analyse_postcode(postcode):
     if os.path.exists(file_path):
         pass
     else:
-        url="http://prod.publicdata.landregistry.gov.uk.s3-website-eu-west-1.amazonaws.com/pp-2022.csv"
-        urllib.request.urlretrieve(url, file_path)
+        try:
+            url="http://prod.publicdata.landregistry.gov.uk.s3-website-eu-west-1.amazonaws.com/pp-2022.csv"
+            urllib.request.urlretrieve(url, file_path)
+        except Exception:
+            raise Exception
+            return 1
     pp2022=[]
     prices=0
     minimum_price=float("inf")
